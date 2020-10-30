@@ -82,8 +82,8 @@ const Recipe: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState({});
 
   useEffect(() => {
-    const parsedRecipe = localStorage.getItem('@ConvertMyRecipe:parsedRecipe');
-    const storedUnitGroup = localStorage.getItem('@ConvertMyRecipe:unitGroup');
+    const parsedRecipe = sessionStorage.getItem('parsedRecipe');
+    const storedUnitGroup = sessionStorage.getItem('unitGroup');
 
     if (!parsedRecipe || ! storedUnitGroup) {
       router.push("/");
@@ -172,9 +172,9 @@ const Recipe: React.FC = () => {
         parsedRecipe: parsedRecipeSanitized,
       });
 
-      localStorage.setItem('@ConvertMyRecipe:recipe', response.data.recipe);
-      localStorage.removeItem('@ConvertMyRecipe:parsedRecipe');
-      localStorage.removeItem('@ConvertMyRecipe:unitGroup');
+      sessionStorage.setItem('recipe', response.data.recipe);
+      sessionStorage.removeItem('parsedRecipe');
+      sessionStorage.removeItem('unitGroup');
 
       router.push('/recipe/converted');
     } catch (err) {

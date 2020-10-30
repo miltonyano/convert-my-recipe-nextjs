@@ -59,7 +59,7 @@ const Main: React.FC = () => {
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
-    const loadStoredRecipe = localStorage.getItem('@ConvertMyRecipe:recipe');
+    const loadStoredRecipe = sessionStorage.getItem('recipe');
 
     if (loadStoredRecipe) {
       setStoredRecipe(loadStoredRecipe);
@@ -93,14 +93,12 @@ const Main: React.FC = () => {
 
         const { recipe } = data;
 
-        const storedUnitGroup = localStorage.getItem(
-          '@ConvertMyRecipe:unitGroup',
-        );
+        const storedUnitGroup = sessionStorage.getItem('unitGroup',);
 
         if (recipe !== storedRecipe || !storedUnitGroup) {
-          localStorage.setItem('@ConvertMyRecipe:recipe', recipe);
-          localStorage.removeItem('@ConvertMyRecipe:parsedRecipe');
-          localStorage.removeItem('@ConvertMyRecipe:unitGroup');
+          sessionStorage.setItem('recipe', recipe);
+          sessionStorage.removeItem('parsedRecipe');
+          sessionStorage.removeItem('unitGroup');
 
           const response = await api.post<ApiResponse>('/recipe/parse', {
             recipe,
@@ -118,9 +116,9 @@ const Main: React.FC = () => {
             return;
           }
 
-          localStorage.setItem('@ConvertMyRecipe:parsedRecipe', parsedRecipe);
-          localStorage.setItem(
-            '@ConvertMyRecipe:unitGroup',
+          sessionStorage.setItem('parsedRecipe', parsedRecipe);
+          sessionStorage.setItem(
+            'unitGroup',
             JSON.stringify(unitGroup),
           );
         }

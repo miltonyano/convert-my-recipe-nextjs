@@ -17,7 +17,7 @@ const ConvertedRecipe: React.FC = () => {
   const [storedRecipe, setStoredRecipe] = useState('');
 
   useEffect(() => {
-    const recipe = localStorage.getItem('@ConvertMyRecipe:recipe');
+    const recipe = sessionStorage.getItem('recipe');
 
     if(!recipe) {
       router.push("/");
