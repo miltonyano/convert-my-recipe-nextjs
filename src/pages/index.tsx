@@ -189,6 +189,70 @@ const Main: React.FC = () => {
           </Description>
         </MainContentContainer>
 
+        <ConversionTableContainer
+          id="mass-conversion-table"
+          className="table-responsive"
+        >
+          <h3>Mass Conversion Table</h3>
+          <table className="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">
+                  to
+                  <FiArrowRight />
+                </th>
+                <th scope="col">Milligram (mg)</th>
+                <th scope="col">Gram (g)</th>
+                <th scope="col">Kilogram (kg)</th>
+                <th scope="col">Poundmass (lb)</th>
+                <th scope="col">Ounce (oz)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Milligram</th>
+                <td>-</td>
+                <td>0.001</td>
+                <td>1e-6</td>
+                <td>2.2046226218488E-6</td>
+                <td>3.5273962e-5</td>
+              </tr>
+              <tr>
+                <th scope="row">Gram</th>
+                <td>1,000</td>
+                <td>-</td>
+                <td>0.001</td>
+                <td>0.00220462</td>
+                <td>0.035274</td>
+              </tr>
+              <tr>
+                <th scope="row">Kilogram</th>
+                <td>1,000,000</td>
+                <td>1,000</td>
+                <td>-</td>
+                <td>2.20462</td>
+                <td>35.274</td>
+              </tr>
+              <tr>
+                <th scope="row">Poundmass</th>
+                <td>453592</td>
+                <td>453.592</td>
+                <td>0.453592</td>
+                <td>-</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <th scope="row">Ounce</th>
+                <td>28349.5</td>
+                <td>28.3495</td>
+                <td>0.0283495</td>
+                <td>0.0625</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </ConversionTableContainer>
+
         <UnitContentContainer id="kilogram">
           <UnitHeader>
             <UnitTitle>Kilogram</UnitTitle>
@@ -428,10 +492,10 @@ const Main: React.FC = () => {
         </UnitContentContainer>
 
         <ConversionTableContainer
-          id="mass-conversion-table"
+          id="volume-conversion-table"
           className="table-responsive"
         >
-          <h3>Mass Conversion Table</h3>
+          <h3>Volume Conversion Table</h3>
           <table className="table table-bordered">
             <thead>
               <tr>
@@ -439,52 +503,67 @@ const Main: React.FC = () => {
                   to
                   <FiArrowRight />
                 </th>
-                <th scope="col">Milligram (mg)</th>
-                <th scope="col">Gram (g)</th>
-                <th scope="col">Kilogram (kg)</th>
-                <th scope="col">Poundmass (lb)</th>
-                <th scope="col">Ounce (oz)</th>
+                <th scope="col">Liter (l)</th>
+                <th scope="col">Milliliter (ml)</th>
+                <th scope="col">Fuidonce (floz)</th>
+                <th scope="col">Teaspoon (tsp)</th>
+                <th scope="col">Tablespoon (tbsp)</th>
+                <th scope="col">Cup (cp)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Milligram</th>
+                <th scope="row">Liter</th>
                 <td>-</td>
-                <td>0.001</td>
-                <td>1e-6</td>
-                <td>2.2046226218488E-6</td>
-                <td>3.5273962e-5</td>
-              </tr>
-              <tr>
-                <th scope="row">Gram</th>
                 <td>1,000</td>
-                <td>-</td>
+                <td>33.814</td>
+                <td>202.884</td>
+                <td>67.628</td>
+                <td>4.22675</td>
+              </tr>
+              <tr>
+                <th scope="row">Milliliter</th>
                 <td>0.001</td>
-                <td>0.00220462</td>
-                <td>0.035274</td>
-              </tr>
-              <tr>
-                <th scope="row">Kilogram</th>
-                <td>1,000,000</td>
-                <td>1,000</td>
                 <td>-</td>
-                <td>2.20462</td>
-                <td>35.274</td>
+                <td>3.3814e-5</td>
+                <td>0.000202884</td>
+                <td>6.7628e-5</td>
+                <td>4.22675e-6</td>
               </tr>
               <tr>
-                <th scope="row">Poundmass</th>
-                <td>453592</td>
-                <td>453.592</td>
-                <td>0.453592</td>
+                <th scope="row">Fuidonce</th>
+                <td>0.0295735</td>
+                <td>29.5735</td>
                 <td>-</td>
-                <td>16</td>
+                <td>6</td>
+                <td>2</td>
+                <td>0.125</td>
               </tr>
               <tr>
-                <th scope="row">Ounce</th>
-                <td>28349.5</td>
-                <td>28.3495</td>
-                <td>0.0283495</td>
+                <th scope="row">Teaspoon</th>
+                <td>0.00492892</td>
+                <td>4.92892</td>
+                <td>0.166667</td>
+                <td>-</td>
+                <td>0.333333</td>
+                <td>0.0208333</td>
+              </tr>
+              <tr>
+                <th scope="row">Tablespoon</th>
+                <td>0.0147868</td>
+                <td>14.7868</td>
+                <td>0.5</td>
+                <td>3</td>
+                <td>-</td>
                 <td>0.0625</td>
+              </tr>
+              <tr>
+                <th scope="row">Cup</th>
+                <td>0.236588</td>
+                <td>236.588</td>
+                <td>8</td>
+                <td>48</td>
+                <td>16</td>
                 <td>-</td>
               </tr>
             </tbody>
@@ -771,10 +850,10 @@ const Main: React.FC = () => {
         </UnitContentContainer>
 
         <ConversionTableContainer
-          id="volume-conversion-table"
+          id="length-conversion-table"
           className="table-responsive"
         >
-          <h3>Volume Conversion Table</h3>
+          <h3>Length Conversion Table</h3>
           <table className="table table-bordered">
             <thead>
               <tr>
@@ -782,67 +861,39 @@ const Main: React.FC = () => {
                   to
                   <FiArrowRight />
                 </th>
-                <th scope="col">Liter (l)</th>
-                <th scope="col">Milliliter (ml)</th>
-                <th scope="col">Fuidonce (floz)</th>
-                <th scope="col">Teaspoon (tsp)</th>
-                <th scope="col">Tablespoon (tbsp)</th>
-                <th scope="col">Cup (cp)</th>
+                <th scope="col">Meter (m)</th>
+                <th scope="col">Centimeter (cm)</th>
+                <th scope="col">Inch (in)</th>
+                <th scope="col">Foot (ft)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Liter</th>
+                <th scope="row">Meter</th>
                 <td>-</td>
-                <td>1,000</td>
-                <td>33.814</td>
-                <td>202.884</td>
-                <td>67.628</td>
-                <td>4.22675</td>
+                <td>100</td>
+                <td>39.3701</td>
+                <td>3.28084</td>
               </tr>
               <tr>
-                <th scope="row">Milliliter</th>
-                <td>0.001</td>
+                <th scope="row">Centimeter</th>
+                <td>0.01</td>
                 <td>-</td>
-                <td>3.3814e-5</td>
-                <td>0.000202884</td>
-                <td>6.7628e-5</td>
-                <td>4.22675e-6</td>
+                <td>0.393701</td>
+                <td>0.0328084</td>
               </tr>
               <tr>
-                <th scope="row">Fuidonce</th>
-                <td>0.0295735</td>
-                <td>29.5735</td>
+                <th scope="row">Inch</th>
+                <td>0.0254</td>
+                <td>2.54</td>
                 <td>-</td>
-                <td>6</td>
-                <td>2</td>
-                <td>0.125</td>
+                <td>0.0833333</td>
               </tr>
               <tr>
-                <th scope="row">Teaspoon</th>
-                <td>0.00492892</td>
-                <td>4.92892</td>
-                <td>0.166667</td>
-                <td>-</td>
-                <td>0.333333</td>
-                <td>0.0208333</td>
-              </tr>
-              <tr>
-                <th scope="row">Tablespoon</th>
-                <td>0.0147868</td>
-                <td>14.7868</td>
-                <td>0.5</td>
-                <td>3</td>
-                <td>-</td>
-                <td>0.0625</td>
-              </tr>
-              <tr>
-                <th scope="row">Cup</th>
-                <td>0.236588</td>
-                <td>236.588</td>
-                <td>8</td>
-                <td>48</td>
-                <td>16</td>
+                <th scope="row">Foot</th>
+                <td>0.3048</td>
+                <td>30.48</td>
+                <td>12</td>
                 <td>-</td>
               </tr>
             </tbody>
@@ -1088,10 +1139,10 @@ const Main: React.FC = () => {
         </UnitContentContainer>
 
         <ConversionTableContainer
-          id="length-conversion-table"
+          id="temperature-conversion-table"
           className="table-responsive"
         >
-          <h3>Length Conversion Table</h3>
+          <h3>Temperature Conversion Table</h3>
           <table className="table table-bordered">
             <thead>
               <tr>
@@ -1099,39 +1150,19 @@ const Main: React.FC = () => {
                   to
                   <FiArrowRight />
                 </th>
-                <th scope="col">Meter (m)</th>
-                <th scope="col">Centimeter (cm)</th>
-                <th scope="col">Inch (in)</th>
-                <th scope="col">Foot (ft)</th>
+                <th scope="col">Celsius (°C)</th>
+                <th scope="col">Fahrenheit (°F)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Meter</th>
+                <th scope="row">Celsius</th>
                 <td>-</td>
-                <td>100</td>
-                <td>39.3701</td>
-                <td>3.28084</td>
+                <td>33.8</td>
               </tr>
               <tr>
-                <th scope="row">Centimeter</th>
-                <td>0.01</td>
-                <td>-</td>
-                <td>0.393701</td>
-                <td>0.0328084</td>
-              </tr>
-              <tr>
-                <th scope="row">Inch</th>
-                <td>0.0254</td>
-                <td>2.54</td>
-                <td>-</td>
-                <td>0.0833333</td>
-              </tr>
-              <tr>
-                <th scope="row">Foot</th>
-                <td>0.3048</td>
-                <td>30.48</td>
-                <td>12</td>
+                <th scope="row">Fahrenheit</th>
+                <td>-17.2222</td>
                 <td>-</td>
               </tr>
             </tbody>
@@ -1271,37 +1302,7 @@ const Main: React.FC = () => {
           </UnitFooter>
         </UnitContentContainer>
 
-        <ConversionTableContainer
-          id="temperature-conversion-table"
-          className="table-responsive"
-        >
-          <h3>Temperature Conversion Table</h3>
-          <table className="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">
-                  to
-                  <FiArrowRight />
-                </th>
-                <th scope="col">Celsius (°C)</th>
-                <th scope="col">Fahrenheit (°F)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Celsius</th>
-                <td>-</td>
-                <td>33.8</td>
-              </tr>
-              <tr>
-                <th scope="row">Fahrenheit</th>
-                <td>-17.2222</td>
-                <td>-</td>
-              </tr>
-            </tbody>
-          </table>
-        </ConversionTableContainer>
-      </Content>
+        </Content>
   );
 };
 
