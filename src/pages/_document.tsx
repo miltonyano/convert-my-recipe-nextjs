@@ -35,6 +35,8 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
 
+          <script data-ad-client="ca-pub-8422291499380251" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
           {/* <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/> */}
           <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
         </Head>
